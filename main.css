@@ -10,6 +10,7 @@
 html {
     width: 100%;
     height: auto !important;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -342,7 +343,7 @@ form {
     grid-column: span 2;
 }
 
-.enteraddress {
+.Message {
     grid-column: span 2;
 }
 
@@ -365,7 +366,7 @@ form {
 }
 
 input,
-.text-address,
+.text-message,
 select {
     display: block;
     width: 100%;
@@ -374,7 +375,7 @@ select {
     height: 25px;
 }
 
-.text-address {
+.enterMessage {
     height: 50px;
 }
 
@@ -423,6 +424,35 @@ select {
 
 #checkboxFAQ {
     display: none;
+}
+
+/* back to top button */
+
+.back-to-top {
+    position: fixed;
+    bottom: 4.4rem;
+    right: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    transition: 0.2s ease-out;
+}
+
+.back-to-top span {
+    color: #fff;
+    transition: ease-out;
+    font-size: 1.7rem;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+}
+
+.back-to-top span:hover {
+    color: navy;
 }
 
 @media screen and (max-width: 1023px) {
