@@ -1,0 +1,474 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+    width: 100%;
+    height: auto !important;
+}
+
+:root {
+    --bg-color: #d7d7d7;
+    --bg-text: #000000;
+    --bg-anotherColor: #000000;
+    --bg-anotherText: #d7d7d7;
+    --icon: url("./assets/Header/moon.png");
+    --bs-color: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+}
+
+body:has(#checkBox:checked) {
+    --bg-color: #000000;
+    --bg-text: #d7d7d7;
+    --bg-anotherColor: #d7d7d7;
+    --bg-anotherText: #000000;
+    --icon: url("./assets/Header/sun.png");
+    --bs-color: 0px 5px 10px rgba(255, 255, 255, 1);
+}
+
+#checkBox {
+    display: none;
+}
+
+body {
+    width: 100%;
+    transition: background 0.3s, color 0.3s;
+    background-color: var(--bg-color);
+    color: var(--bg-text);
+    scroll-behavior: smooth;
+}
+
+/* haeder */
+
+a {
+    font-size: 1.4rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 30px;
+}
+
+.header .headerNav .headerUl {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.headerUl {
+    padding-right: 30px;
+}
+
+.headerUl .dropdown a {
+    color: var(--bg-text);
+}
+
+.header .headerNav .dropdown {
+    font-size: 16px;
+    color: var(--bg-text);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.header .headerNav .dropdown {
+    position: relative;
+}
+
+.dropdown #service-menu {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    z-index: 2;
+    padding: 3px 10px;
+    background-color: var(--bg-color);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-2vh);
+    transition: opacity 0.5s, transform 0.3s;
+    box-shadow: var(--bs-color);
+}
+
+#service-menu a {
+    display: block;
+    white-space: nowrap;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.dropdown:hover #service-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+li a:hover {
+    color: white !important;
+}
+
+.dropdown a:active {
+    color: var(--bg-text);
+}
+
+.header .moonImage {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.moonImage .checkboxBtn {
+    background: var(--icon) no-repeat center / contain !important;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 99;
+    display: block;
+    height: 24px;
+}
+
+.checkboxBtn:hover {
+    transform: translateY(-3px);
+}
+
+/* section-1 */
+
+.section-1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 300px;
+}
+
+.section-1 .introSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 40px;
+}
+
+.introSection .introDaction {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 40px;
+}
+
+.introDaction .paragraph {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.introDaction .mechanicalParagraph {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #909090;
+}
+
+.introDaction h2 {
+    font-size: 2.7rem;
+    font-weight: bold;
+    color: var(--bg-text);
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+.introSection .iconsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+
+.iconsContainer a {
+    font-size: 1.7rem;
+}
+
+/* section-2 */
+
+.section-2 .aboutmeSection {
+    background: var(--bg-anotherColor);
+    color: var(--bg-anotherText);
+    height: auto;
+    width: 100%;
+    padding: 4% 6%;
+}
+
+.section-2 .aboutmeSection h3 {
+    padding: 30px 0px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.aboutmeSection .descriptionDetail {
+    font-size: 1.1rem;
+}
+
+.aboutmeSection .descriptionDetail .hiddenText {
+    display: none;
+}
+
+#readmoreInput:checked ~ .hiddenText {
+    display: inline;
+}
+
+#readmoreInput:checked ~ label .readMore {
+    display: none;
+}
+
+#readmoreInput:checked ~ label .readLess {
+    display: inline;
+}
+
+.aboutmeSection .descriptionDetail label {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.readLess {
+    display: none;
+}
+
+.descriptionDetail input {
+    display: none;
+}
+
+.descriptionDetail::before {
+    content: open-quote;
+}
+
+.descriptionDetail::after {
+    content: close-quote;
+}
+
+.skillSection .exploreContainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20%;
+}
+
+.skillSection .exploreContainer .aboutMe {
+    padding: 30px 0px;
+    font-size: 1.6rem;
+}
+
+.skillSection .exploreContainer .explore h3 {
+    font-size: 1.4rem;
+    padding: 20px;
+}
+
+.explore .insideExplore .inside {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+.insideExplore .upperParagraph {
+    padding-bottom: 25px;
+}
+
+.skillContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20%;
+}
+
+.skillContainer h3 {
+    padding: 30px;
+    font-size: 1.6rem;
+}
+
+.skillContainer p {
+    text-align: start;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.skillContainer .imageContainer {
+    display: flex;
+    flex-wrap: wrap row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skillContainer .imageContainer img {
+    width: 64px;
+    height: 64px;
+}
+
+/* section-3 */
+
+/* section-4 */
+
+form {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    font: bold;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 500px;
+    gap: 10px;
+}
+
+.textEmail {
+    grid-column: span 2;
+}
+
+.phoneNumber {
+    grid-column: span 2;
+}
+
+.enteraddress {
+    grid-column: span 2;
+}
+
+.section-4 label {
+    display: block;
+    margin: 3px;
+}
+
+.button {
+    color: white;
+    background-color: skyblue;
+    background: rgb(75, 75, 243);
+    border-radius: 5px;
+    grid-column: 2;
+    border: none;
+    font-size: 15px;
+    height: 40px;
+    width: 140px;
+    margin-left: 105px;
+}
+
+input,
+.text-address,
+select {
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    height: 25px;
+}
+
+.text-address {
+    height: 50px;
+}
+
+.button:hover {
+    color: lightblue;
+}
+
+.button:active {
+    color: navy;
+}
+
+/* secttion-4 */
+
+.section-4 h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-4 .faqContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--bg-anotherColor);
+    color: var(--bg-anotherText);
+    padding: 5% 10%;
+    width: 100%;
+    height: auto;
+}
+
+.faqContainer .hiddenAnswer {
+    display: none;
+}
+
+.faqContainer #checkboxFAQ:checked ~ .hiddenAnswer {
+    display: block;
+}
+
+#checkboxFAQ:checked ~ label .opne {
+    display: none;
+}
+
+#checkboxFAQ:checked ~ label .close {
+    display: inline-block;
+}
+
+#checkboxFAQ {
+    display: none;
+}
+
+@media screen and (max-width: 1023px) {
+    /* header */
+
+    .header a {
+        font-size: 1.2rem;
+    }
+
+    /* section-1 */
+
+    .section-1 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: unset;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    /* header */
+
+    .header a {
+        font-size: 1rem;
+    }
+
+    /* section-1 */
+
+    .section-1 {
+        display: flex;
+        flex-direction: column;
+        gap: unset;
+    }
+
+    .section-1 .mechanicalParagraph {
+        font-size: 1rem;
+    }
+
+    .section-1 .photoSection img {
+        width: 90%;
+        height: auto;
+    }
+
+    /* section-2 */
+
+    .section-2 .skillContainer .imageContainer img:nth-child(n + 5) {
+        display: none;
+    }
+}
